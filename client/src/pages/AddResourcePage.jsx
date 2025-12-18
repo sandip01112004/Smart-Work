@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 import { Box, Container, Heading, Text, VStack, FormControl, FormLabel, Input, Select, Textarea, Button, Grid, Alert, AlertIcon } from '@chakra-ui/react';
@@ -37,7 +38,7 @@ const AddResourcePage = () => {
         }
 
         try {
-            await axios.post(`${import.meta.env.VITE_API_URL}/resources`, {
+            await axios.post(`${API_BASE_URL}/api/resources`, {
                 ...formData,
                 contributorName: user.displayName || user.email.split('@')[0],
                 contributorId: user.uid

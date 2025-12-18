@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams, Link as RouterLink } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 import { Box, Container, Heading, Text, SimpleGrid, Flex, Spinner, Alert, AlertIcon, VStack, HStack, Button, Icon, Link } from '@chakra-ui/react';
 import ResourceCard from '../components/ResourceCard';
 import { auth } from '../firebase';
@@ -20,7 +21,7 @@ const ClassPage = () => {
         const fetchResources = async () => {
             try {
                 setLoading(true);
-                let url = `${import.meta.env.VITE_API_URL}/resources?semester=${semester}`;
+                let url = `${API_BASE_URL}/api/resources?semester=${semester}`;
                 if (subjectParam) {
                     url += `&subject=${subjectParam}`;
                 }
@@ -48,7 +49,7 @@ const ClassPage = () => {
         }
 
         try {
-            await axios.post(`${import.meta.env.VITE_API_URL}/bookmarks`, {
+            await axios.post(`${API_BASE_URL}/api/bookmarks`, {
                 userId: user.uid,
                 resourceId: resourceId
             });

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config/api';
 import { auth } from '../firebase';
 import ResourceCard from '../components/ResourceCard';
 import { Link as RouterLink } from 'react-router-dom';
@@ -21,7 +22,7 @@ const PrivatePage = () => {
             try {
                 // In a real app, we'd use an auth token header. 
                 // For MVP, we are passing userId in params as per Step 3 implementation.
-                const response = await axios.get(`${import.meta.env.VITE_API_URL}/bookmarks/${user.uid}`);
+                const response = await axios.get(`${API_BASE_URL}/api/bookmarks/${user.uid}`);
                 setBookmarks(response.data);
             } catch (err) {
                 console.error(err);
@@ -49,7 +50,7 @@ const PrivatePage = () => {
         if (!user) return;
 
         try {
-            await axios.delete(`${import.meta.env.VITE_API_URL}/bookmarks/${resourceId}`, {
+            await axios.delete(`${API_BASE_URL}/api/bookmarks/${resourceId}`, {
                 data: { userId: user.uid } // Need to pass userId to know whose bookmark to remove
             });
 

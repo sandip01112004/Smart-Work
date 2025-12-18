@@ -140,7 +140,7 @@ MongoDB (Resources, Users, Bookmarks)
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/smart-work.git
+git clone https://github.com/sandip01112004/smart-work.git
 cd smart-work
 ```
 
@@ -169,7 +169,11 @@ npm run dev
 
 ## 📸 Screenshots
 
-*(Add screenshots of Homepage, Library, Contribute Page, Study Space here)*
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/c599b9ad-0d0a-408b-bbb7-fe93c8edb7fe" />
+
+<img width="1890" height="895" alt="image" src="https://github.com/user-attachments/assets/6f1d7267-122e-468d-b8c1-e2ccd8eb3622" />
+
+
 
 ---
 
@@ -203,12 +207,6 @@ Built **by a student, for students**.
 
 ---
 
-## 📬 Contact
 
-**Developer:** Sandip Sanjay Kharate
-📧 Email: *add your email*
-🔗 LinkedIn / GitHub: *add links*
-
----
 
 ⭐ If you like this project, feel free to star the repository!
